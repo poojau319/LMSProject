@@ -8,6 +8,7 @@ function CourseDetails() {
   const navigate = useNavigate();
 
   const [course, setCourse] = useState(null);
+  const [feedback, setFeedback] = useState([]);
 
 
   const enrollCourse = async () => {
@@ -54,29 +55,48 @@ function CourseDetails() {
 
   useEffect(() => {
 
-    const fetchCourse = async () => {
+  const fetchCourse = async () => {
 
-      try {
+    try {
 
-        const res = await axios.get(
-          `https://lmsproject-ntug.onrender.com/api/courses/${id}`
-        );
+      const res = await axios.get(
+        `https://lmsproject-ntug.onrender.com/api/courses/${id}`
+      );
 
-        setCourse(res.data);
+      setCourse(res.data);
 
-      } catch(error) {
+    } catch(error) {
 
-        console.log(error);
+      console.log(error);
 
-      }
+    }
 
-    };
+  };
 
 
-    fetchCourse();
+  const fetchFeedback = async () => {
 
-  }, [id]);
+    try {
 
+      const res = await axios.get(
+        `https://lmsproject-ntug.onrender.com/api/feedback/${id}`
+      );
+
+      setFeedback(res.data);
+
+    } catch(error) {
+
+      console.log("Feedback fetch error:", error);
+
+    }
+
+  };
+
+
+  fetchCourse();
+  fetchFeedback();
+
+}, [id]);
 
 
   if(!course){
@@ -114,7 +134,18 @@ function CourseDetails() {
 
           <div className="flex gap-6 mt-6 text-sm">
 
-            <span>⭐ 4.8 Rating</span>
+           <span>
+  ⭐{" "}
+  {feedback.length
+    ? (
+        feedback.reduce(
+          (sum, item) => sum + Number(item.rating || 0),
+          0
+        ) / feedback.length
+      ).toFixed(1)
+    : 0}{" "}
+  Rating
+</span>
             <span>👨‍🎓 Students</span>
             <span>⏳ {course.duration}</span>
 
@@ -154,7 +185,63 @@ function CourseDetails() {
           </div>
 
 
+{/* Student Reviews */}
 
+<div className="bg-white rounded-xl shadow p-6 mt-6">
+
+  <h2 className="text-2xl font-bold">
+    Student Reviews 💬
+  </h2>
+
+  {feedback.length === 0 ? (
+
+    <p className="mt-4 text-gray-500">
+      No reviews yet.
+    </p>
+
+  ) : (
+
+    <div className="mt-4 space-y-4">
+
+      {feedback.map((item) => (
+
+        <div
+          key={item._id}
+          className="border rounded-xl p-4"
+        >
+
+          <div className="flex items-center justify-between">
+
+            <h3 className="font-bold text-gray-800">
+              {item.student?.name || "Student"}
+            </h3>
+
+            <span className="text-yellow-500">
+              {"★".repeat(Number(item.rating || 0))}
+              {"☆".repeat(5 - Number(item.rating || 0))}
+            </span>
+
+          </div>
+
+          <p className="text-gray-600 mt-3">
+            {item.comment}
+          </p>
+
+          {item.createdAt && (
+            <p className="text-xs text-gray-400 mt-2">
+              {new Date(item.createdAt).toLocaleDateString()}
+            </p>
+          )}
+
+        </div>
+
+      ))}
+
+    </div>
+
+  )}
+
+</div>
 
 
           {/* Video Lectures */}

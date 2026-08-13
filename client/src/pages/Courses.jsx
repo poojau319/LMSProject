@@ -9,34 +9,67 @@ function Courses() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+ useEffect(() => {
 
-    const fetchCourses = async () => {
+  const fetchCourses = async () => {
 
-      try {
+    try {
 
-        const res = await axios.get(
-          "https://lmsproject-ntug.onrender.com/api/courses"
-        );
+      const res = await axios.get(
+        "https://lmsproject-ntug.onrender.com/api/courses"
+      );
 
-        console.log(res.data);
+      const coursesWithRatings = await Promise.all(
+        res.data.map(async (course) => {
 
-        setCourses(res.data);
+          try {
 
+            const feedbackRes = await axios.get(
+              `https://lmsproject-ntug.onrender.com/api/feedback/${course._id}`
+            );
 
-      } catch (error) {
+            const feedback = feedbackRes.data;
 
-        console.log(error);
+            const averageRating = feedback.length
+              ? (
+                  feedback.reduce(
+                    (sum, item) =>
+                      sum + Number(item.rating || 0),
+                    0
+                  ) / feedback.length
+                ).toFixed(1)
+              : 0;
 
-      }
+            return {
+              ...course,
+              rating: averageRating,
+            };
 
-    };
+          } catch (error) {
 
+            return {
+              ...course,
+              rating: 0,
+            };
 
-    fetchCourses();
+          }
 
-  }, []);
+        })
+      );
 
+      setCourses(coursesWithRatings);
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+
+  };
+
+  fetchCourses();
+
+}, []);
 
 
 

@@ -70,8 +70,10 @@ function StudentDashboard() {
         </div>
       )}
 
-      <div className="grid md:grid-cols-3 gap-6 mb-10">
+      {/* Dashboard Cards */}
+      <div className="grid md:grid-cols-2 gap-6 mb-10">
 
+        {/* My Courses */}
         <div className="bg-white p-6 rounded-xl shadow">
           <h2 className="font-bold text-xl">
             My Courses 📚
@@ -89,6 +91,7 @@ function StudentDashboard() {
           </Link>
         </div>
 
+        {/* Progress */}
         <div className="bg-white p-6 rounded-xl shadow">
           <h2 className="font-bold text-xl">
             Progress 📊
@@ -106,18 +109,9 @@ function StudentDashboard() {
           </Link>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="font-bold text-xl">
-            Feedback ⭐
-          </h2>
-
-          <p className="text-gray-600 mt-3">
-            Share your learning experience
-          </p>
-        </div>
-
       </div>
 
+      {/* My Learning */}
       <div>
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-2xl font-bold">
