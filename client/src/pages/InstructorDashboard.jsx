@@ -21,7 +21,7 @@ function InstructorDashboard() {
       setError("");
 
       const response = await axios.get(
-        "http://localhost:5000/api/instructor/my-courses",
+        "https://lmsproject-ntug.onrender.com/api/instructor/my-courses",
         {
           headers: {
             Authorization: `Bearer ${token}`,

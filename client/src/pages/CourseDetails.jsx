@@ -27,7 +27,7 @@ function CourseDetails() {
     try {
 
       const res = await axios.post(
-        `http://localhost:5000/api/courses/enroll/${id}`,
+        `https://lmsproject-ntug.onrender.com/api/courses/enroll/${id}`,
         {},
         {
           headers: {
@@ -59,7 +59,7 @@ function CourseDetails() {
       try {
 
         const res = await axios.get(
-          `http://localhost:5000/api/courses/${id}`
+          `https://lmsproject-ntug.onrender.com/api/courses/${id}`
         );
 
         setCourse(res.data);

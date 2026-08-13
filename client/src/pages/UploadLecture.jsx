@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const API =
-  "http://localhost:5000/api/instructor";
+  "https://lmsproject-ntug.onrender.com/api/instructor";
 
 const EMPTY_FORM = {
   title: "",

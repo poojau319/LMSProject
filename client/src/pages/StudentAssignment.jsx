@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const API = "http://localhost:5000/api/assignments";
+const API = "https://lmsproject-ntug.onrender.com/api/assignments";
 
 function StudentAssignment() {
   const { id } = useParams();
@@ -140,7 +140,7 @@ function StudentAssignment() {
 
     if (courseId) {
       await axios.put(
-        `http://localhost:5000/api/progress/${courseId}/update`,
+        `https://lmsproject-ntug.onrender.com/api/progress/${courseId}/update`,
         {
           assignmentMarks: 100,
         },

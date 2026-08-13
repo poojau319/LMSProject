@@ -23,7 +23,7 @@ function StudentQuiz() {
         setError("");
 
         const res = await axios.get(
-          `http://localhost:5000/api/quizzes/${courseId}`,
+          `https://lmsproject-ntug.onrender.com/api/quizzes/${courseId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -88,7 +88,7 @@ function StudentQuiz() {
 );
 
       const res = await axios.post(
-        `http://localhost:5000/api/quizzes/${courseId}/submit`,
+        `https://lmsproject-ntug.onrender.com/api/quizzes/${courseId}/submit`,
         {
           answers: formattedAnswers,
         },

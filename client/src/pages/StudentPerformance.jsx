@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const API =
-  "http://localhost:5000/api/instructor/student-performance";
+  "https://lmsproject-ntug.onrender.com/api/instructor/student-performance";
 
 const clamp = (value, min = 0, max = 100) => {
   const number = Number(value);

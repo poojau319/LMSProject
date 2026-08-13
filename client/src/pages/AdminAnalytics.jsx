@@ -12,7 +12,7 @@ const fetchAnalytics = async () => {
     setRefreshing(true);
 
     const res = await axios.get(
-      "http://localhost:5000/api/admin/analytics",
+      "https://lmsproject-ntug.onrender.com/api/admin/analytics",
       {
         headers: {
           Authorization: `Bearer ${token}`,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-const API = "http://localhost:5000/api";
+const API = "https://lmsproject-ntug.onrender.com/api";
 
 function StudentCourseDetails() {
   const { id } = useParams();

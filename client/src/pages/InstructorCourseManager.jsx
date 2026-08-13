@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:5000/api/instructor";
+const API = "https://lmsproject-ntug.onrender.com/api/instructor";
 
 const emptyCourse = {
   title: "",

@@ -19,7 +19,7 @@ function InstructorMyCourses() {
       setError("");
 
       const response = await axios.get(
-        "http://localhost:5000/api/instructor/my-courses",
+        "https://lmsproject-ntug.onrender.com/api/instructor/my-courses",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ function InstructorMyCourses() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/instructor/delete-course/${courseId}`,
+        `https://lmsproject-ntug.onrender.com/api/instructor/delete-course/${courseId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

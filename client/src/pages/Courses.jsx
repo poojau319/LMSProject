@@ -15,7 +15,7 @@ function Courses() {
       try {
 
         const res = await axios.get(
-          "http://localhost:5000/api/courses"
+          "https://lmsproject-ntug.onrender.com/api/courses"
         );
 
         console.log(res.data);
@@ -60,7 +60,7 @@ function Courses() {
 
       const res = await axios.post(
 
-        `http://localhost:5000/api/courses/enroll/${courseId}`,
+        `https://lmsproject-ntug.onrender.com/api/courses/enroll/${courseId}`,
 
         {},
 

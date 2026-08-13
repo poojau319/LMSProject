@@ -22,12 +22,12 @@ function AdminCertificates() {
       const [eligibleRes, certificateRes] =
         await Promise.all([
           axios.get(
-            "http://localhost:5000/api/admin/certificates/eligible",
+            "https://lmsproject-ntug.onrender.com/api/admin/certificates/eligible",
             config
           ),
 
           axios.get(
-            "http://localhost:5000/api/admin/certificates",
+            "https://lmsproject-ntug.onrender.com/api/admin/certificates",
             config
           ),
         ]);
@@ -60,7 +60,7 @@ function AdminCertificates() {
       setIssuing(`${studentId}-${courseId}`);
 
       await axios.post(
-        "http://localhost:5000/api/admin/certificates/issue",
+        "https://lmsproject-ntug.onrender.com/api/admin/certificates/issue",
         {
           studentId,
           courseId,
@@ -92,7 +92,7 @@ function AdminCertificates() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/certificates/${id}/revoke`,
+        `https://lmsproject-ntug.onrender.com/api/admin/certificates/${id}/revoke`,
         {},
         config
       );

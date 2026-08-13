@@ -26,7 +26,7 @@ function AdminRevenue() {
       }
 
       const res = await axios.get(
-        "http://localhost:5000/api/admin/revenue",
+        "https://lmsproject-ntug.onrender.com/api/admin/revenue",
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -13,7 +13,7 @@ function FeedbackManagement() {
       setLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5000/api/admin/feedback",
+        "https://lmsproject-ntug.onrender.com/api/admin/feedback",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ function FeedbackManagement() {
       setDeleting(id);
 
       await axios.delete(
-        `http://localhost:5000/api/admin/feedback/${id}`,
+        `https://lmsproject-ntug.onrender.com/api/admin/feedback/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

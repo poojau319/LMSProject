@@ -40,7 +40,7 @@ function StudentFeedback() {
       setMessageType("");
 
       await axios.post(
-        `http://localhost:5000/api/feedback/${courseId}`,
+        `https://lmsproject-ntug.onrender.com/api/feedback/${courseId}`,
         {
           rating: Number(feedback.rating),
           comment: feedback.comment.trim(),

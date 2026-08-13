@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const API = "http://localhost:5000/api/assignments";
+const API = "https://lmsproject-ntug.onrender.com/api/assignments";
 
 const emptyForm = {
   title: "",

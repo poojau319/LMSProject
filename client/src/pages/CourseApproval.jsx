@@ -12,7 +12,7 @@ function CourseApproval() {
       setLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5000/api/admin/courses",
+        "https://lmsproject-ntug.onrender.com/api/admin/courses",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ function CourseApproval() {
   const updateStatus = async (id, action) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/courses/${id}/${action}`,
+        `https://lmsproject-ntug.onrender.com/api/admin/courses/${id}/${action}`,
         {},
         {
           headers: {

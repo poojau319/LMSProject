@@ -14,7 +14,7 @@ function MyCertificates() {
   const fetchCertificates = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/certificates/my",
+        "https://lmsproject-ntug.onrender.com/api/certificates/my",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ function MyCertificates() {
   const downloadCertificate = async (id) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/certificates/download/${id}`,
+        `https://lmsproject-ntug.onrender.com/api/certificates/download/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

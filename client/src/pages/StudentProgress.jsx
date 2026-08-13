@@ -18,7 +18,7 @@ function StudentProgress() {
         setError("");
 
         const res = await axios.get(
-          "http://localhost:5000/api/progress/my",
+          "https://lmsproject-ntug.onrender.com/api/progress/my",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ function StudentProgress() {
       setDownloadingCertificate(courseId);
 
       const response = await axios.get(
-        `http://localhost:5000/api/progress/${courseId}/certificate`,
+        `https://lmsproject-ntug.onrender.com/api/progress/${courseId}/certificate`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

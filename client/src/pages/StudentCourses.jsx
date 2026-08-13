@@ -20,7 +20,7 @@ function StudentCourses() {
 
       // Get approved courses
       const res = await axios.get(
-        "http://localhost:5000/api/courses"
+        "https://lmsproject-ntug.onrender.com/api/courses"
       );
 
       setCourses(
@@ -31,7 +31,7 @@ function StudentCourses() {
       if (token) {
         try {
           const myCourses = await axios.get(
-            "http://localhost:5000/api/courses/my-courses",
+            "https://lmsproject-ntug.onrender.com/api/courses/my-courses",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ function StudentCourses() {
       setPurchasing(id);
 
       await axios.post(
-        `http://localhost:5000/api/purchases/${id}`,
+        `https://lmsproject-ntug.onrender.com/api/purchases/${id}`,
         {},
         {
           headers: {

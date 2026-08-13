@@ -9,7 +9,7 @@ function Home() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/courses");
+        const res = await axios.get("https://lmsproject-ntug.onrender.com/api/courses");
 
         const courseData = Array.isArray(res.data)
           ? res.data

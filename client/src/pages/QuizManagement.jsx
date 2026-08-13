@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const API = "http://localhost:5000/api/quizzes";
+const API = "https://lmsproject-ntug.onrender.com/api/quizzes";
 
 const EMPTY_QUIZ = {
   question: "",

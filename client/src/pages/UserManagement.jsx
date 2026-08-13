@@ -22,7 +22,7 @@ function UserManagement() {
       setError("");
 
       const res = await axios.get(
-        "http://localhost:5000/api/admin/users",
+        "https://lmsproject-ntug.onrender.com/api/admin/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ function UserManagement() {
       setError("");
 
       await axios.delete(
-        `http://localhost:5000/api/admin/users/${selectedUser._id}`,
+        `https://lmsproject-ntug.onrender.com/api/admin/users/${selectedUser._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
