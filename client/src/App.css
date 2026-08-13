@@ -63,3 +63,79 @@ body{
   border-radius:10px;
   box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+
+/* ================= RESPONSIVE FIX ================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar button {
+    margin-left: 5px;
+    padding: 7px 12px;
+  }
+
+  .hero {
+    padding: 40px 16px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .courses {
+    padding: 24px 16px;
+  }
+
+  .course-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .courses {
+    padding: 20px 12px;
+  }
+}
