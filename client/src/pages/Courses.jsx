@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Courses() {
 
   const [search, setSearch] = useState("");
   const [courses, setCourses] = useState([]);
 
+  const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -45,13 +46,10 @@ function Courses() {
     const token = localStorage.getItem("token");
 
 
-    if (!token) {
-
-      alert("Please login first");
-
-      return;
-
-    }
+   if (!token) {
+  navigate("/login");
+  return;
+}
 
 
 
