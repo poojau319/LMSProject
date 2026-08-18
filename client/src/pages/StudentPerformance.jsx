@@ -147,7 +147,7 @@ function StudentPerformance() {
 
   const normalizedPerformance = useMemo(() => {
     return performance.map((item) => {
-      const progress = clamp(item.progress);
+      const progress = clamp(item.percentage);
 
       const quizScore = Number(item.quizScore) || 0;
 
